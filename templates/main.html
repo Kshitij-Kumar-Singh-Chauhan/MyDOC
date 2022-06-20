@@ -1,93 +1,217 @@
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="og:title" content="MyDOC Disease Prediction">
-  <meta name="author" content="By Aman Singh, Tushar Singh and Kshitij Kumar Singh Chauhan">
-  <meta name="og:image" content="static/logo.jpg">
-  <meta name="Keywords" content="Flask, Machine Learning, Deep Learning, Artificial Intelligence, AI, ML,DL, Web Development">
-  <meta name="description" content="A Machine Learning and Deep Learning based webapp for Multiple Disease Prediction.">
-  <title>MyDOC</title>
-  <link rel="icon" href="{{ url_for('static', filename = 'logo1.jpg') }}" type="image/icon type">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
-  <style>
-    html, body{ height:100%; margin:0; }
-header{ height:50px;}
-footer{ height:75px; background:rgb(242, 248, 248); }
-
-/* Trick */
-body{ 
-  display:flex; 
-  flex-direction:column; 
-}
-
-footer{
-  padding:10px;
-  margin-top:auto;
-  margin-bottom: auto; 
-}
-  </style>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drishti</title>
 </head>
+
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="background-color: rgb(42, 45, 46) !important;">
-        <a href="{{ url_for('home') }}"><img src="{{ url_for('static', filename = 'logo.jpg') }} " height="60px" width="60px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav ml-auto">
-             <li class="nav-item active">
-               <a href="{{ url_for('home') }}" class="nav-link">About</a>
-             </li>
-             <li class="nav-item active">
-               <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
-             </li>
-             <li class="nav-item active">
-               <a class="nav-link" href="{{ url_for('cancerPage') }}">Breast Cancer</a>
-             </li>
-             <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
-             </li>
-             <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('pneumoniaPage') }}">Pneumonia</a>
-              </li>
-           </ul>
-         </div>
-       </nav>
-	<br>
-<br>
-<br>
-<br>
-<main>
-	<div class="container-fluid" style="margin-bottom: 20px; background-color: #252529;">
-	{% block content %}
-	{% endblock %}
-    </div>
-  </main>
-  <footer>
-    <center>
-      <ul style="list-style-type:square;">
-      &nbsp;
-     
-      <li><p style="color: black;">Made by <span style="color: rgb(252, 105, 7);">&star;</span> Aman Singh <span style="color: rgb(252, 105, 7);">&star;</span> Tushar Singh <span style="color: rgb(252, 105, 7);">&star;</span> Kshitij Kumar Singh Chauhan</p></li>
-    </ul>
-  </center>
-  </footer>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <span id="nav-title">Drishti</span>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#upload">Test Now</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="#Hindi">हिन्दी साइट</a></li>
+            </nav>
+
+        </div>
+    </header><!-- End Header -->
+
+    <section id="hero">
+        <div class="hero-container">
+    
+            <h1 data-aos="zoom-in"><span id="glow">Drishti</span></h1>
+            <h2 data-aos="fade-up">Where the eyes go, the mind follows</h2>
+            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Get Started</a>
+        </div>
+    </section><!-- End Hero -->
+
+
+
+    <main id="main">
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+               
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        
+                    </div>
+                    <div class="col-lg-6 pt-3" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <h4>An effort towards a more secure world.</h4>
+                            <p class="font-italic">
+                                It is a centralized solution that will analyze data from multiple sources. It is capable of detecting a person's face and vehicles in real time and automatically matching it with the database. Additionally, it is capable of detecting criminal activity/crime with CCTV by evaluating live movies for violence, mob formation, suspicious body language, etc.
+
+                            </p>
+                            <h4>Some numbers</h4>
+                            <ul>
+                                <li><i class="bx bx-check-double"></i> Around 1.54 million cameras are installed in the top 15 cities of India</li>
+                                <li><i class="bx bx-check-double"></i>New Delhi ranks first with 1,826.58 cameras per square mile</li>
+                                <li><i class="bx bx-check-double"></i> Cities like New Delhi (59.54), Indore (49.88), Hyderabad (43.78) and Chennai (40.87), which incidentally are also the focal points of CCTV surveillance in the country, also rank high in the crime index</li>
+                            </ul>
+                            <p>
+                              Our solution, Drishti, can help reduce manual work. It is capable of processing the feeds of all CCTV cameras installed in public and semi-public premises for Police Control Rooms/Centralized Command and Control Centre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <section id="upload" class="upload">
+            <div id="particles-js"></div>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Test our Project Live!</h2>
+                <p>Use the button given below to test out our project.</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" data-aos="fade-up">
+                <form method="post" enctype="multipart/form-data" id="vid_form">
+                    {% csrf_token %}
+                    <input type="file" accept=".mp4" name="vid" required="" id="id_vid" hidden>
+                    <label for="id_vid" class=" fBtn cta-btn align-middle" style="cursor: pointer;">Choose Video
+                        File</label>
+                    <button class="btn btn-secondary" hidden>Submit</button>
+                </form>
+            </div>
+
+        </section>
+        </section>
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Tech Stack</h2>
+                    <p>This project encompasses various technologies within itself.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up">
+                        <i class="bx bx-receipt"></i>
+                        <h4>Tensorflow</h4>
+                        <p>Prediction and analysis</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-cube-alt"></i>
+                        <h4>OpenCV</h4>
+                        <p>Video frame capturing and pre-processing</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-images"></i>
+                        <h4>Django</h4>
+                        <p>Web Platform, API End point and Job Scheduler for Tensorflow</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-shield"></i>
+                        <h4>Electron</h4>
+                        <p>Cross Platform Dekstop Application</p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <section id="team" class="team">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Our Team</h2>
+              
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in">
+                            
+                            <div class="member-info">
+                                <h4>Kishan Gopal Mishra</h4>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            
+                            <div class="member-info">
+                                <h4>Kshitij Kumar Singh Chauhan</h4>
+                             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="200">
+                        
+                            <div class="member-info">
+                                <h4>Akshit Rana</h4>
+ 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                      
+                        <h3>Team Paribhaavya</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Team Paribhaavya</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+   
+
+    <script type="text/javascript">
+        document.getElementById('vid_form').onchange = function () {
+            document.getElementById('vid_form').submit();
+        };
+    </script>
 </body>
+
 </html>
