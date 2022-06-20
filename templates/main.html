@@ -16,29 +16,15 @@
 
             <div class="logo">
                 <span id="nav-title">Drishti</span>
-            </div>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#upload">Test Now</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li><a class="nav-link scrollto" href="#Hindi">हिन्दी साइट</a></li>
-            </nav>
-
-        </div>
+            
     </header><!-- End Header -->
 
-    <section id="hero">
-        <div class="hero-container">
+   
+            <h1 >Drishti</h1>
+            <h2 >Where the eyes go, the mind follows</h2>
+            
+     
     
-            <h1 data-aos="zoom-in"><span id="glow">Drishti</span></h1>
-            <h2 data-aos="fade-up">Where the eyes go, the mind follows</h2>
-            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Get Started</a>
-        </div>
-    </section><!-- End Hero -->
 
 
 
@@ -76,22 +62,11 @@
                 </div>
 
             </div>
-        </section><!-- End About Us Section -->
-        <section id="upload" class="upload">
-            <div id="particles-js"></div>
-            <div class="section-title" data-aos="fade-up">
+        
                 <h2>Test our Project Live!</h2>
                 <p>Use the button given below to test out our project.</p>
-            </div>
-            <div class="d-flex align-items-center justify-content-center" data-aos="fade-up">
-                <form method="post" enctype="multipart/form-data" id="vid_form">
-                    {% csrf_token %}
-                    <input type="file" accept=".mp4" name="vid" required="" id="id_vid" hidden>
-                    <label for="id_vid" class=" fBtn cta-btn align-middle" style="cursor: pointer;">Choose Video
-                        File</label>
-                    <button class="btn btn-secondary" hidden>Submit</button>
-                </form>
-            </div>
+           
+        
 
         </section>
         </section>
@@ -179,39 +154,7 @@
 
     </main><!-- End #main -->
 
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                      
-                        <h3>Team Paribhaavya</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container footer-bottom clearfix">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Team Paribhaavya</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-        </div>
-    </footer><!-- End Footer -->
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
-
-    <!-- Vendor JS Files -->
    
-
-    <script type="text/javascript">
-        document.getElementById('vid_form').onchange = function () {
-            document.getElementById('vid_form').submit();
-        };
-    </script>
 </body>
 
 </html>
