@@ -1,109 +1,217 @@
-{% extends 'main.html' %}
-{% block content %}
-{% if message %}
-        <div class="alert alert-danger">{{ message }}</div>
-    {% endif %}
-<div class="container">
-    <div class="card card-body" style="background-color: #e49414; color: #053536; font-family: Helvetica; font-weight: bold; border: 1px solid rgb(125, 83, 160); box-shadow: 0 0 10px black;">
-        <h2>Hey! This is MyDOC Smart Diagnosis System.</h2>
-        <p>An effort by Aman Tushar & Kshitij.</p>
-        <br>
-        <h2>Model Accuracies:</h2>
-        <ul>
-            <li>Diabetes Model: <strong>98.25%</strong></li>
-            <li>Breast Cancer Model: <strong>98.25%</strong></li>
-            <li>Heart Disease Model: <strong>85.25%</strong></li>
-            <li>Kidney Disease Model: <strong>99%</strong></li>
-            <li>Liver Disease Model: <strong>78%</strong></li>
-            <li>Malaria Model: <strong>96%</strong></li>
-            <li>Pneumonia Model: <strong>95%</strong></li>
-        </ul>
-        <br>
-        <h3>KNOW THE SYMPTOMS !!!</h3>
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #191b24; color: #ffc400; font-family: Helvetica; font-weight: bold; box-shadow: 0 0 5px rgb(106, 163, 60); margin: 5px;">
-                <h4>Diabetes</h4>
-                <p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy. Sometimes your body doesn’t make enough—or any—insulin or doesn’t use insulin well. Glucose then stays in your blood and doesn’t reach your cells.</p>
-                <h5>Symptoms</h5>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drishti</title>
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <span id="nav-title">Drishti</span>
+            </div>
+
+            <nav id="navbar" class="navbar">
                 <ul>
-                    <li>Urinating often.</li>
-                    <li>Feeling very thirsty.</li>
-                    <li>Extreme fatigue.</li>
-                    <li>Blurry vision.</li>
-                </ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#upload">Test Now</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="#Hindi">हिन्दी साइट</a></li>
+            </nav>
+
+        </div>
+    </header><!-- End Header -->
+
+    <section id="hero">
+        <div class="hero-container">
+    
+            <h1 data-aos="zoom-in"><span id="glow">Drishti</span></h1>
+            <h2 data-aos="fade-up">Where the eyes go, the mind follows</h2>
+            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Get Started</a>
+        </div>
+    </section><!-- End Hero -->
+
+
+
+    <main id="main">
+
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+               
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        
+                    </div>
+                    <div class="col-lg-6 pt-3" data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+                            <h4>An effort towards a more secure world.</h4>
+                            <p class="font-italic">
+                                It is a centralized solution that will analyze data from multiple sources. It is capable of detecting a person's face and vehicles in real time and automatically matching it with the database. Additionally, it is capable of detecting criminal activity/crime with CCTV by evaluating live movies for violence, mob formation, suspicious body language, etc.
+
+                            </p>
+                            <h4>Some numbers</h4>
+                            <ul>
+                                <li><i class="bx bx-check-double"></i> Around 1.54 million cameras are installed in the top 15 cities of India</li>
+                                <li><i class="bx bx-check-double"></i>New Delhi ranks first with 1,826.58 cameras per square mile</li>
+                                <li><i class="bx bx-check-double"></i> Cities like New Delhi (59.54), Indore (49.88), Hyderabad (43.78) and Chennai (40.87), which incidentally are also the focal points of CCTV surveillance in the country, also rank high in the crime index</li>
+                            </ul>
+                            <p>
+                              Our solution, Drishti, can help reduce manual work. It is capable of processing the feeds of all CCTV cameras installed in public and semi-public premises for Police Control Rooms/Centralized Command and Control Centre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <section id="upload" class="upload">
+            <div id="particles-js"></div>
+            <div class="section-title" data-aos="fade-up">
+                <h2>Test our Project Live!</h2>
+                <p>Use the button given below to test out our project.</p>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" data-aos="fade-up">
+                <form method="post" enctype="multipart/form-data" id="vid_form">
+                    {% csrf_token %}
+                    <input type="file" accept=".mp4" name="vid" required="" id="id_vid" hidden>
+                    <label for="id_vid" class=" fBtn cta-btn align-middle" style="cursor: pointer;">Choose Video
+                        File</label>
+                    <button class="btn btn-secondary" hidden>Submit</button>
+                </form>
+            </div>
+
+        </section>
+        </section>
+        <!-- ======= Services Section ======= -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Tech Stack</h2>
+                    <p>This project encompasses various technologies within itself.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up">
+                        <i class="bx bx-receipt"></i>
+                        <h4>Tensorflow</h4>
+                        <p>Prediction and analysis</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="100">
+                        <i class="bx bx-cube-alt"></i>
+                        <h4>OpenCV</h4>
+                        <p>Video frame capturing and pre-processing</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bx bx-images"></i>
+                        <h4>Django</h4>
+                        <p>Web Platform, API End point and Job Scheduler for Tensorflow</p>
+                    </div>
+                    <div class="col-12 col-lg-6 icon-box mt-2" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bx bx-shield"></i>
+                        <h4>Electron</h4>
+                        <p>Cross Platform Dekstop Application</p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+
+        <section id="team" class="team">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Our Team</h2>
+              
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in">
+                            
+                            <div class="member-info">
+                                <h4>Kishan Gopal Mishra</h4>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            
+                            <div class="member-info">
+                                <h4>Kshitij Kumar Singh Chauhan</h4>
+                             
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="member d-flex flex-column align-items-center" data-aos="zoom-in"
+                            data-aos-delay="200">
+                        
+                            <div class="member-info">
+                                <h4>Akshit Rana</h4>
+ 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+          
+        </section><!-- End Team Section -->
+
+    </main><!-- End #main -->
+
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                      
+                        <h3>Team Paribhaavya</h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #191b24; color: #ffc400; font-family: Helvetica; font-weight: bold;box-shadow: 0 0 5px rgb(128, 211, 162); margin: 5px;">
-                <h4>Breast Cancer</h4>
-                <p>Breast cancer is cancer that forms in the cells of the breasts.
 
-                    After skin cancer, breast cancer is the most common cancer diagnosed in women in the United States. Breast cancer can occur in both men and women, but it's far more common in women.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>A breast lump or thickening that feels different from the surrounding tissue</li>
-                    <li>Change in the size, shape or appearance of a breast</li>
-                    <li>Changes to the skin over the breast, such as dimpling</li>
-                    <li>Redness or pitting of the skin over your breast, like the skin of an orange</li>
-                </ul>
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Team Paribhaavya</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
         </div>
+    </footer><!-- End Footer -->
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #2a2a2c; color: #ffc400; font-family: Helvetica; font-weight: bold;box-shadow: 0 0 5px rgb(218, 57, 57); margin: 5px;">
-                <h4>Chronic kidney disease</h4>
-                <p>Chronic kidney disease, also called chronic kidney failure, describes the gradual loss of kidney function. Your kidneys filter wastes and excess fluids from your blood, which are then excreted in your urine. When chronic kidney disease reaches an advanced stage, dangerous levels of fluid, electrolytes and wastes can build up in your body.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Nausea</li>
-                    <li>Vomiting</li>
-                    <li>Fatigue and weakness</li>
-                    <li>Muscle twitches and cramps</li>
-                </ul>
-            </div>
-        </div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #2a2a2c; color: #ffc400; font-family: Helvetica; font-weight: bold;box-shadow: 0 0 5px rgb(155, 60, 115); margin: 5px;">
-                <h4>Liver disease</h4>
-                <p>Symptoms of liver disease can vary, but they often include swelling of the abdomen and legs, bruising easily, changes in the color of your stool and urine, and jaundice, or yellowing of the skin and eyes. Sometimes there are no symptoms. Tests such as imaging tests and liver function tests can check for liver damage and help to diagnose liver diseases.</p>
-            </div>
-        </div>
+    <!-- Vendor JS Files -->
+   
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #2a2a2c; color: #ffc400; font-family: Helvetica; font-weight: bold;box-shadow: 0 0 5px rgb(71, 106, 172); margin: 5px;">
-                <h4>Malaria</h4>
-                <p>Malaria is a mosquito-borne infectious disease that affects humans and other animals. Malaria causes symptoms that typically include fever, tiredness, vomiting, and headaches. In severe cases it can cause yellow skin, seizures, coma, or death. Symptoms usually begin ten to fifteen days after being bitten by an infected mosquito. If not properly treated, people may have recurrences of the disease months later.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Fever. This is the most common symptom.</li>
-                    <li>Chills</li>
-                    <li>Headache</li>
-                    <li>Nausea and vomiting</li>
-                </ul>
-            </div>
-        </div>
+    <script type="text/javascript">
+        document.getElementById('vid_form').onchange = function () {
+            document.getElementById('vid_form').submit();
+        };
+    </script>
+</body>
 
-        <br>
-        <div class="row">
-            <div class="col-md-12 card card-body" style="background-color: #2a2a2c; color: #ffc400; font-family: Helvetica; font-weight: bold;box-shadow: 0 0 5px rgb(182, 219, 112); margin: 5px;">
-                <h4>Pneumonia</h4>
-                <p>Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs may fill with fluid or pus (purulent material), causing cough with phlegm or pus, fever, chills, and difficulty breathing. A variety of organisms, including bacteria, viruses and fungi, can cause pneumonia.</p>
-                <h5>Symptoms</h5>
-                <ul>
-                    <li>Cough, which may produce greenish, yellow or even bloody mucus.</li>
-                    <li>Fever, sweating and shaking chills.</li>
-                    <li>Shortness of breath.</li>
-                    <li>Rapid, shallow breathing.</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
-{% endblock %}
+</html>
